@@ -20,4 +20,5 @@ do
   BASE_DIR=$BASE_DIR PROJECT_DIR=$(pwd) sh $i
 done
 
-rm -rf DUMMY_DIR
+rm -rf $DUMMY_DIR
+rm $ZIP_NAME
