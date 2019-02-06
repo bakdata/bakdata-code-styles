@@ -14,6 +14,12 @@ The easiest way to do this is with the following command in the directory of you
 bash -c "$(curl -sL https://raw.githubusercontent.com/bakdata/bakdata-code-styles/master/install.sh)"
 ```
 
+Java style guide
+----------------
+
+Based on https://google.github.io/styleguide/javaguide.html with the following changes:
+- 4 space indent
+- 120 line width
 
 Acknowledgements
 ----------------
