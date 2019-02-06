@@ -1,13 +1,16 @@
 #!/bin/bash
 # Installs bakdata IntelliJ configs into your user configs.
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 CONFIGS="$PROJECT_DIR/code-styles/intellij"
 if [[ -d $CONFIGS ]]; then
-    echo "Copying project-specific IntelliJ configs..."
+    echo "${bold}Copying project-specific IntelliJ configs...${normal}"
     CODE_STYLE_NAME=$(sed -ne '/<code_scheme name=/ s/.*name="\(.*\)".*/\1/gp' "$CONFIGS/codestyles"/*.xml)
     INSPECTION_NAME=$(sed -ne '/<option name="PROJECT_PROFILE"/ s/\s*<[^>]*>\s*//gp' "$CONFIGS/inspection"/*.xml)
 else
-    echo "Copying default bakdata IntelliJ configs..."
+    echo "${bold}Copying default bakdata IntelliJ configs...${normal}"
     CONFIGS=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
     CODE_STYLE_NAME=bakdata
     INSPECTION_NAME=bakdata
@@ -37,11 +40,11 @@ done
 if [[ $FOUND_INTELLIJ = true ]]; then
     IDEA_SETTINGS="$PROJECT_DIR/.idea"
     mkdir -p $IDEA_SETTINGS
-    echo "Overwriting project settings with code style '$CODE_STYLE_NAME' and inspection name with '$INSPECTION_NAME'"
+    echo "${bold}Overwriting project settings with code style '$CODE_STYLE_NAME' and inspection name with '$INSPECTION_NAME'${normal}"
     find "$CONFIGS/project" -type f -print0 | xargs -0 sed -i "" 's/{{CODE_STYLE_NAME}}/'"$CODE_STYLE_NAME"'/g ; s/{{INSPECTION_NAME}}/'"$INSPECTION_NAME"'/g'
     cp -frv "$CONFIGS/project"/* "$IDEA_SETTINGS"
-    echo "Restart IntelliJ."
+    echo "${bold}Restart IntelliJ.${normal}"
 else
-    echo "Could not find Intellij setting folder and skipping Intellij project setup."
-    echo "If you use Intellij, manually setup by going to preferences, and apply '$CODE_STYLE_NAME' in codestyle and '$INSPECTION_NAME' in inspection."
+    echo "${bold}Could not find Intellij setting folder and skipping Intellij project setup."
+    echo "If you use Intellij, manually setup by going to preferences, and apply '$CODE_STYLE_NAME' in codestyle and '$INSPECTION_NAME' in inspection.${normal}"
 fi
