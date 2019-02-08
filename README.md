@@ -7,12 +7,15 @@ IntelliJ IDEA code style settings for Bakdata's OSS projects.
 How to Use It
 -------------
 
-This repository contains a script that will fetch all templates and guide you through the process.
+This repository contains a script that will fetch all styles and installs them for all installed IDEs.
 
 The easiest way to do this is with the following command in the directory of your project:
 ```sh
 bash -c "$(curl -sL https://raw.githubusercontent.com/bakdata/bakdata-code-styles/master/install.sh)"
 ```
+
+(currently only intellij)
+(Windows support pending)
 
 Java style guide
 ----------------
@@ -20,6 +23,13 @@ Java style guide
 Based on https://google.github.io/styleguide/javaguide.html with the following changes:
 - 4 space indent
 - 120 line width
+
+
+Python style guide
+------------------
+
+Base on PEP8 with the following changes:
+*none*
 
 Acknowledgements
 ----------------
