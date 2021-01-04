@@ -7,7 +7,7 @@ normal=$(tput sgr0)
 # Try to find any intellij installation
 FOUND_INTELLIJ=false
 for i in $HOME/Library/Preferences/IntelliJIdea*  \
-         $HOME/.IntelliJIdea*/config              
+         $HOME/.config/JetBrains/.IntelliJIdea*
 do
     if [[ -d $i ]]; then
         FOUND_INTELLIJ=true
@@ -30,7 +30,7 @@ if [[ $FOUND_INTELLIJ = true ]]; then
         INSPECTION_NAME=bakdata
 
         for i in $HOME/Library/Preferences/IntelliJIdea*  \
-                 $HOME/.IntelliJIdea*/config              
+                 $HOME/.config/JetBrains/.IntelliJIdea*
         do
           if [[ -d $i ]]; then
             # Install codestyles
