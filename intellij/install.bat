@@ -4,9 +4,9 @@ echo Installing bakdata IntelliJ configs...
 
 setlocal enableDelayedExpansion
 
-for /D %%i in ("%userprofile%"\.AndroidStudio*) do call :copy_config "%%i"
-for /D %%i in ("%userprofile%"\.IdeaIC*) do call :copy_config "%%i"
-for /D %%i in ("%userprofile%"\.IntelliJIdea*) do call :copy_config "%%i"
+for /D %%i in ("%APPDATA%"\JetBrains\.AndroidStudio*) do call :copy_config "%%i"
+for /D %%i in ("%APPDATA%"\JetBrains\.IdeaIC*) do call :copy_config "%%i"
+for /D %%i in ("%APPDATA%"\JetBrains\.IntelliJIdea*) do call :copy_config "%%i"
 
 echo.
 echo Restart IntelliJ.
