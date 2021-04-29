@@ -4,9 +4,10 @@
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-# Try to find any intellij installation
+# Try to find any IntelliJ installation
 FOUND_INTELLIJ=false
-for i in $HOME/Library/Preferences/IntelliJIdea*  \
+for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
+         $HOME/Library/Preferences/IntelliJIdea* \
          $HOME/.config/JetBrains/IntelliJIdea*
 do
     if [[ -d $i ]]; then
@@ -29,7 +30,8 @@ if [[ $FOUND_INTELLIJ = true ]]; then
         CODE_STYLE_NAME=bakdata
         INSPECTION_NAME=bakdata
 
-        for i in $HOME/Library/Preferences/IntelliJIdea*  \
+        for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
+                 $HOME/Library/Preferences/IntelliJIdea* \
                  $HOME/.config/JetBrains/IntelliJIdea*
         do
           if [[ -d $i ]]; then
@@ -53,8 +55,6 @@ if [[ $FOUND_INTELLIJ = true ]]; then
         echo "${bold}Restart IntelliJ.${normal}"
     fi
 else
-    echo "${bold}Could not find Intellij setting folder and skipping Intellij project setup."
-    echo "If you use Intellij, manually setup by going to preferences, and apply '$CODE_STYLE_NAME' in codestyle and '$INSPECTION_NAME' in inspection.${normal}"
+    echo "${bold}Could not find IntelliJ setting folder and skipping IntelliJ project setup."
+    echo "If you use IntelliJ, manually setup by going to preferences, and apply '$CODE_STYLE_NAME' in codestyle and '$INSPECTION_NAME' in inspection.${normal}"
 fi
-
-
