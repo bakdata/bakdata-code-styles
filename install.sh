@@ -17,7 +17,7 @@ BASE_DIR="$DUMMY_DIR/bakdata-code-styles-$GIT_BRANCH"
 # Call IDE specific install scripts
 for i in $BASE_DIR/*/install.sh;
 do
-  BASE_DIR=$BASE_DIR PROJECT_DIR=$(pwd) sh $i
+  BASE_DIR=$BASE_DIR PROJECT_DIR=$(pwd) bash $i
 done
 
 rm -rf $DUMMY_DIR
