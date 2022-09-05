@@ -8,7 +8,7 @@ normal=$(tput sgr0)
 FOUND_INTELLIJ=false
 for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
          $HOME/Library/Preferences/IntelliJIdea* \
-         $HOME/.config/JetBrains/IntelliJIdea*
+         $HOME/.config/JetBrains/*Idea*
 do
     if [[ -d $i ]]; then
         FOUND_INTELLIJ=true
@@ -32,7 +32,7 @@ if [[ $FOUND_INTELLIJ = true ]]; then
 
         for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
                  $HOME/Library/Preferences/IntelliJIdea* \
-                 $HOME/.config/JetBrains/IntelliJIdea*
+                 $HOME/.config/JetBrains/*Idea*
         do
           if [[ -d $i ]]; then
             # Install codestyles
