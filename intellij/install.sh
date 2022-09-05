@@ -11,7 +11,6 @@ for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
          $HOME/.config/JetBrains/*Idea*
 do
     if [[ -d $i ]]; then
-        echo "Found intellij"
         FOUND_INTELLIJ=true
     fi
 done
