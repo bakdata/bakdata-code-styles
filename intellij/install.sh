@@ -8,9 +8,10 @@ normal=$(tput sgr0)
 FOUND_INTELLIJ=false
 for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
          $HOME/Library/Preferences/IntelliJIdea* \
-         $HOME/.config/JetBrains/IntelliJIdea*
+         $HOME/.config/JetBrains/*Idea*
 do
     if [[ -d $i ]]; then
+        echo "Found intellij"
         FOUND_INTELLIJ=true
     fi
 done
@@ -32,7 +33,7 @@ if [[ $FOUND_INTELLIJ = true ]]; then
 
         for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
                  $HOME/Library/Preferences/IntelliJIdea* \
-                 $HOME/.config/JetBrains/IntelliJIdea*
+                 $HOME/.config/JetBrains/*Idea*
         do
           if [[ -d $i ]]; then
             # Install codestyles
