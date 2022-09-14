@@ -12,7 +12,7 @@ curl -H 'Cache-Control: no-cache' -Ls "https://github.com/bakdata/bakdata-code-s
 
 # Extract all code-styles for now
 mkdir -p $DUMMY_DIR && unzip -qq $ZIP_NAME -d $DUMMY_DIR
-BASE_DIR="$DUMMY_DIR/bakdata-code-styles-$GIT_BRANCH"
+BASE_DIR="$DUMMY_DIR/bakdata-code-styles-${GIT_BRANCH/\//-}"
 
 # Call IDE specific install scripts
 for i in $BASE_DIR/*/install.sh;
