@@ -6,8 +6,8 @@ normal=$(tput sgr0)
 
 # Try to find any IntelliJ installation
 FOUND_INTELLIJ=false
-for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
-         $HOME/Library/Preferences/IntelliJIdea* \
+for i in $HOME/Library/Application\ Support/JetBrains/*Idea* \
+         $HOME/Library/Preferences/*Idea* \
          $HOME/.config/JetBrains/*Idea*
 do
     if [[ -d $i ]]; then
@@ -30,8 +30,8 @@ if [[ $FOUND_INTELLIJ = true ]]; then
         CODE_STYLE_NAME=bakdata
         INSPECTION_NAME=bakdata
 
-        for i in $HOME/Library/Application\ Support/JetBrains/IntelliJIdea* \
-                 $HOME/Library/Preferences/IntelliJIdea* \
+        for i in $HOME/Library/Application\ Support/JetBrains/*Idea* \
+                 $HOME/Library/Preferences/*Idea* \
                  $HOME/.config/JetBrains/*Idea*
         do
           if [[ -d $i ]]; then
