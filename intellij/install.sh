@@ -50,7 +50,7 @@ if [[ $FOUND_INTELLIJ = true ]]; then
         done
 
         echo "${bold}Overwriting project settings with code style '$CODE_STYLE_NAME' and inspection name with '$INSPECTION_NAME'${normal}"
-        find "$CONFIGS/project" -type f -print0 | xargs -0 sed -i "" 's/{{CODE_STYLE_NAME}}/'"$CODE_STYLE_NAME"'/g ; s/{{INSPECTION_NAME}}/'"$INSPECTION_NAME"'/g'
+        find "$CONFIGS/project" -type f -print0 | xargs -0 sed -i 's/{{CODE_STYLE_NAME}}/'"$CODE_STYLE_NAME"'/g ; s/{{INSPECTION_NAME}}/'"$INSPECTION_NAME"'/g'
         cp -frv "$CONFIGS/project"/* "$IDEA_SETTINGS"
         echo "${bold}Restart IntelliJ.${normal}"
     fi

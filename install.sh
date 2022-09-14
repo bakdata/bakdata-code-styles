@@ -4,7 +4,7 @@
 
 ZIP_NAME="bakdata-code-styles.zip"
 DUMMY_DIR=".code-styles"
-GIT_BRANCH="master"
+GIT_BRANCH="fix/sed-inplace-suffix"
 
 # Get existing project code-styles
 echo -e "Downloading code-styles...\n"
