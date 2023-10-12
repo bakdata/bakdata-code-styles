@@ -30,6 +30,10 @@ Based on https://google.github.io/styleguide/javaguide.html with the following c
 
 [See here](editor-agnostic/markdown/README.md)
 
+## TOML style guide
+
+[See here](editor-agnostic/toml/README.md)
+
 
 ## Acknowledgements
 
