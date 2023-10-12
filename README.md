@@ -28,8 +28,7 @@ Based on https://google.github.io/styleguide/javaguide.html with the following c
 Python style guide
 ------------------
 
-Base on PEP8 with the following changes:
-*none*
+[See here](editor-agnostic/python/README.md)
 
 Acknowledgements
 ----------------
